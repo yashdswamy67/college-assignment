@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "xcpp23",
+      "display_name": "C++23",
+      "language": "cpp"
+    },
+    "language_info": {
+      "codemirror_mode": "text/x-c++src",
+      "file_extension": ".cpp",
+      "mimetype": "text/x-c++src",
+      "name": "C++",
+      "nbconvert_exporter": "",
+      "pygments_lexer": "",
+      "version": "cxx23"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "368a0ea0-1ad5-4263-82d5-c8afb24c8160",
+      "cell_type": "code",
+      "source": "# ==========================================\n# 1. DICTIONARY OPERATIONS (Mutable)\n# ==========================================\nprint(\"=== DICTIONARY OPERATIONS ===\")\n\n# Create a dictionary\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"course\": \"Computer Science\"\n}\nprint(\"Initial Dictionary:\", student)\n\n# Append / Add a new key-value pair\nstudent[\"grade\"] = \"A\"\nprint(\"After Adding Grade:\", student)\n\n# Update an existing key-value pair\nstudent[\"age\"] = 21\nprint(\"After Updating Age:\", student)\n\n# Access a value\nprint(\"Access Name:\", student.get(\"name\"))\n\n# Remove an item by key using pop()\nremoved_course = student.pop(\"course\")\nprint(f\"Removed Course ('{removed_course}'):\", student)\n\n# Remove the last inserted item using popitem()\nlast_item = student.popitem()\nprint(f\"Removed Last Item {last_item}:\", student)\n\n# Delete a key using del\ndel student[\"name\"]\nprint(\"After Deleting 'name':\", student)\n\n# Clear all items from dictionary\nstudent.clear()\nprint(\"After Clearing Dictionary:\", student)\n\n\nprint(\"\\n\" + \"=\"*30 + \"\\n\")\n\n\n# ==========================================\n# 2. TUPLE OPERATIONS (Immutable)\n# ==========================================\nprint(\"=== TUPLE OPERATIONS ===\")\n\n# Create a tuple\nfruits = (\"apple\", \"banana\", \"cherry\")\nprint(\"Initial Tuple:\", fruits)\n\n# Access elements via indexing and slicing\nprint(\"First Element:\", fruits[0])\nprint(\"Slice (1 to end):\", fruits[1:])\n\n# Appending to a tuple:\n# Tuples cannot be modified directly. To \"append\", concatenate with another tuple.\nfruits = fruits + (\"date\",)\nprint(\"After Appending 'date':\", fruits)\n\n# Removing an element from a tuple:\n# Convert to a list, remove the item, and convert back to a tuple.\ntemp_list = list(fruits)\ntemp_list.remove(\"banana\")\nfruits = tuple(temp_list)\nprint(\"After Removing 'banana':\", fruits)\n\n# Count occurrences and find index\nprint(\"Count of 'apple':\", fruits.count(\"apple\"))\nprint(\"Index of 'cherry':\", fruits.index(\"cherry\"))\n\n# Delete the entire tuple variable\ndel fruits\nprint(\"Tuple successfully deleted.\")",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
